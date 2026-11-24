@@ -33,13 +33,13 @@ async def cmd_start(message: Message):
 
 @dp.callback_query(F.data == "btn_dep")
 async def handle_btn1(callback: CallbackQuery):
-    await callback.answer("Нажата кнопка 1")
+    await callback.answer("Меню депозитов")
     await callback.message.edit_text("Мама продай квартиру - пополнение",reply_markup=dodep_menu)
 
 
 @dp.callback_query(F.data == "btn_menu")
 async def handle_btn1(callback: CallbackQuery):
-    await callback.answer("Нажата кнопка Назад в меню")
+    await callback.answer("Назад в меню")
     await callback.message.edit_text("Мама продай квартиру - пополнение",reply_markup=main_menu)
     
 
@@ -48,7 +48,7 @@ async def handle_btn1(callback: CallbackQuery):
 @dp.callback_query(F.data == "btn_sbp")
 async def handle_btn1(callback: CallbackQuery):
     await callback.answer("Нажата кнопка SBP")
-    media = InputMediaPhoto(media=FSInputFile(path=f"img/sbp.jpg"), caption="Реквизиты для оплаты ")
+    media = InputMediaPhoto(media=FSInputFile(path=f"img/sbp.png"), caption="Реквизиты для оплаты ")
     await callback.message.edit_media(media, reply_markup=dodep_menu)
 
 @dp.callback_query(F.data == "btn_visa")
