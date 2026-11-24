@@ -20,7 +20,7 @@ dodep_menu = InlineKeyboardMarkup(inline_keyboard=[
         InlineKeyboardButton(text="TRC-20", callback_data="btn_crypto",style="success")
     ],
     [
-        InlineKeyboardButton(text="Назад в меню", callback_data="btn_menu",style="danger",icon_custom_emoji_id="5843680709926981861")
+        InlineKeyboardButton(text="Назад в меню", callback_data="btn_menu_from_img",style="danger",icon_custom_emoji_id="5843680709926981861")
     ]
 ])
 

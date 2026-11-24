@@ -33,16 +33,21 @@ async def cmd_start(message: Message):
 
 @dp.callback_query(F.data == "btn_dep")
 async def handle_btn1(callback: CallbackQuery):
-    await callback.answer("Меню депозитов")
+    await callback.answer("Меню пополнения ")
     await callback.message.edit_text("Мама продай квартиру - пополнение",reply_markup=dodep_menu)
 
-
+#Возврат в меню 
 @dp.callback_query(F.data == "btn_menu")
 async def handle_btn1(callback: CallbackQuery):
     await callback.answer("Назад в меню")
     await callback.message.edit_text("Мама продай квартиру - пополнение",reply_markup=main_menu)
     
-
+@dp.callback_query(F.data == "btn_menu_from_img")
+async def handle_btn1(callback: CallbackQuery):
+    await callback.answer("Назад в меню")
+    await callback.message.delete()
+    await callback.message.answer("Мама продай квартиру - пополнение",reply_markup=main_menu)
+    
 
 #Оплата
 @dp.callback_query(F.data == "btn_sbp")
