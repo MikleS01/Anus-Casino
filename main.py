@@ -41,7 +41,7 @@ async def handle_btn1(callback: CallbackQuery):
 async def handle_btn1(callback: CallbackQuery):
     await callback.answer("Нажата кнопка Назад в меню")
     await callback.message.edit_text("Мама продай квартиру - пополнение",reply_markup=main_menu)
-    await callback.message.edit_media()
+    
 
 
 #Оплата
