@@ -9,7 +9,7 @@ import asyncio
 import os 
 from dotenv import load_dotenv 
 from random import randint,choice
-from aiogram.types import CallbackQuery
+from aiogram.types import CallbackQuery, FSInputFile
 from inline_buttons import *
 
 load_dotenv()
@@ -40,6 +40,22 @@ async def handle_btn1(callback: CallbackQuery):
 async def handle_btn1(callback: CallbackQuery):
      await callback.answer("Нажата кнопка Назад в меню")
      await callback.message.edit_text("Мама продай квартиру - пополнение",reply_markup=main_menu)
+
+#Оплата
+@dp.callback_query(F.data == "btn_spb")
+async def handle_btn1(callback: CallbackQuery):
+    await callback.answer("Нажата кнопка SBP")
+    await callback.message.answer_photo(FSInputFile(path=f"img/sbp.jpg"), caption=f"Реквизиты для оплаты ", reply_markup=dodep_menu)
+
+@dp.callback_query(F.data == "btn_visa")
+async def handle_btn1(callback: CallbackQuery):
+    await callback.answer("Нажата кнопка Visa")
+    await callback.message.edit_text("Мама продай квартиру - пополнение",reply_markup=dodep_menu)
+
+@dp.callback_query(F.data == "btn_dep")
+async def handle_btn1(callback: CallbackQuery):
+    await callback.answer("Нажата кнопка 1")
+    await callback.message.edit_text("Мама продай квартиру - пополнение",reply_markup=dodep_menu)
 
 
 
