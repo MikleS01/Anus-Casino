@@ -52,10 +52,7 @@ async def handle_btn1(callback: CallbackQuery):
     await callback.answer("Нажата кнопка Visa")
     await callback.message.edit_text("Мама продай квартиру - пополнение",reply_markup=dodep_menu)
 
-@dp.callback_query(F.data == "btn_dep")
-async def handle_btn1(callback: CallbackQuery):
-    await callback.answer("Нажата кнопка 1")
-    await callback.message.edit_text("Мама продай квартиру - пополнение",reply_markup=dodep_menu)
+
 
 
 
