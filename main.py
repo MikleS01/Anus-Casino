@@ -28,13 +28,13 @@ dp = Dispatcher()
 @dp.message(F.text=="/start")
 async def cmd_start(message: Message):
     await message.delete()
-    await message.answer("Добро пожаловать в бота", reply_markup=main_menu)
+    await message.answer("Добро пожаловать в Anus Casino", reply_markup=main_menu)
 
 #Меню депа
 @dp.callback_query(F.data == "btn_dep")
 async def handle_btn1(callback: CallbackQuery):
     await callback.answer("Меню пополнения ")
-    await callback.message.edit_text("Мама продай квартиру - пополнение",reply_markup=dodep_menu)
+    await callback.message.edit_text("Меню Пополнения",reply_markup=dodep_menu)
 
 
 
@@ -42,26 +42,40 @@ async def handle_btn1(callback: CallbackQuery):
 @dp.callback_query(F.data == "btn_menu")
 async def handle_btn1(callback: CallbackQuery):
     await callback.answer("Назад в меню")
-    await callback.message.edit_text("Мама продай квартиру - пополнение",reply_markup=main_menu)
+    await callback.message.edit_text("Меню Пополнения",reply_markup=main_menu)
     
 @dp.callback_query(F.data == "btn_menu_from_img")
 async def handle_btn1(callback: CallbackQuery):
     await callback.answer("Назад в меню")
     await callback.message.delete()
-    await callback.message.answer("Мама продай квартиру - пополнение",reply_markup=main_menu)
+    await callback.message.answer("Меню Пополнения",reply_markup=main_menu)
     
 
-#Оплата
+#Оплата SBP
 @dp.callback_query(F.data == "btn_sbp")
 async def handle_btn1(callback: CallbackQuery):
-    await callback.answer("Нажата кнопка SBP")
+    await callback.answer("Оплата SBP")
     media = InputMediaPhoto(media=FSInputFile(path=f"img/sbp.png"), caption="Реквизиты для оплаты ")
     await callback.message.edit_media(media, reply_markup=dodep_menu_img)
 
+
+#Оплата visa
 @dp.callback_query(F.data == "btn_visa")
 async def handle_btn1(callback: CallbackQuery):
-    await callback.answer("Нажата кнопка Visa")
-    await callback.message.edit_text("Мама продай квартиру - пополнение",reply_markup=dodep_menu)
+    await callback.answer("Оплата visa")
+    media = InputMediaPhoto(media=FSInputFile(path=f"img/visa.png"), caption="Реквизиты для оплаты ")
+    await callback.message.edit_media(media, reply_markup=dodep_menu_img)
+
+#Оплата TRC-20
+@dp.callback_query(F.data == "btn_visa")
+async def handle_btn1(callback: CallbackQuery):
+    await callback.answer("Оплата visa")
+    await callback.message.edit_text("Кошелек для перевода: 8708010020:AAEVwKYRfRu3ZGawJZs4oAyuxTIT963a2EY ", reply_markup=dodep_menu_img)
+
+
+
+#################ВЫВОД
+
 
 
 
