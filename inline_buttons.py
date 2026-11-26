@@ -61,3 +61,23 @@ game_menu = InlineKeyboardMarkup(inline_keyboard=[
     ]
 ])
 
+withdraw_menu = InlineKeyboardMarkup(inline_keyboard=[
+    [
+        InlineKeyboardButton(text="Вывод в стим", callback_data="btn_steam_w"),
+        InlineKeyboardButton(text="Вывод TRC-20", callback_data="btn_trc_w")
+    ],
+    [
+        InlineKeyboardButton(text="Вывод на мамину карту", callback_data="btn_visa_w"),
+    ]
+])
+
+withdraw_menu_img = InlineKeyboardMarkup(inline_keyboard=[
+    [
+        InlineKeyboardButton(text="Вывод в стим", callback_data="btn_steam_w"),
+        InlineKeyboardButton(text="Вывод TRC-20", callback_data="btn_trc_w")
+    ],
+    [
+        InlineKeyboardButton(text="Вывод на мамину карту", callback_data="btn_visa_w"),
+    ]
+
+])

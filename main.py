@@ -55,7 +55,7 @@ async def handle_btn1(callback: CallbackQuery):
 @dp.callback_query(F.data == "btn_sbp")
 async def handle_btn1(callback: CallbackQuery):
     await callback.answer("Оплата SBP")
-    media = InputMediaPhoto(media=FSInputFile(path=f"img/sbp.png"), caption="Реквизиты для оплаты ")
+    media = InputMediaPhoto(media=FSInputFile(path=f"img/sbp.png"), caption="Отсканируйте QR-код для оплаты по SBP")
     await callback.message.edit_media(media, reply_markup=dodep_menu_img)
 
 
@@ -63,18 +63,37 @@ async def handle_btn1(callback: CallbackQuery):
 @dp.callback_query(F.data == "btn_visa")
 async def handle_btn1(callback: CallbackQuery):
     await callback.answer("Оплата visa")
-    media = InputMediaPhoto(media=FSInputFile(path=f"img/visa.png"), caption="Реквизиты для оплаты ")
+    media = InputMediaPhoto(media=FSInputFile(path=f"img/visa.png"), caption="ВЕРНИ МАМИНУ КАРТОЧКУ! ")
     await callback.message.edit_media(media, reply_markup=dodep_menu_img)
 
 #Оплата TRC-20
-@dp.callback_query(F.data == "btn_visa")
+@dp.callback_query(F.data == "btn_crypto")
 async def handle_btn1(callback: CallbackQuery):
-    await callback.answer("Оплата visa")
+    await callback.answer("Оплата TRC-20")
     await callback.message.edit_text("Кошелек для перевода: 8708010020:AAEVwKYRfRu3ZGawJZs4oAyuxTIT963a2EY ", reply_markup=dodep_menu_img)
 
 
+#Вывод
+@dp.callback_query(F.data == "btn_steam_w")
+async def handle_btn1(callback: CallbackQuery):
+    await callback.answer("Вывод в Steam")
+    media = InputMediaPhoto(media=FSInputFile(path=f"img/w.png"), caption="Вывод в процессе, пожалуйста ожидайте")
+    await callback.message.edit_media(media, reply_markup=withdraw_menu_img)
 
-#################ВЫВОД
+@dp.callback_query(F.data == "btn_visa_w")
+async def handle_btn1(callback: CallbackQuery):
+    await callback.answer("Вывод по реквезитам")
+    media = InputMediaPhoto(media=FSInputFile(path=f"img/w.png"), caption="Вывод в процессе, пожалуйста ожидайте")
+    await callback.message.edit_media(media, reply_markup=withdraw_menu_img)
+    
+@dp.callback_query(F.data == "btn_trc_w")
+async def handle_btn1(callback: CallbackQuery):
+    await callback.answer("Вывод TRC-20")
+    media = InputMediaPhoto(media=FSInputFile(path=f"img/w.png"), caption="Вывод в процессе, пожалуйста ожидайте")
+    await callback.message.edit_media(media, reply_markup=withdraw_menu_img)
+
+
+
 
 
 
