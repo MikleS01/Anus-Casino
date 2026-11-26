@@ -9,7 +9,7 @@ main_menu = InlineKeyboardMarkup(inline_keyboard=[
     ],
     [
         InlineKeyboardButton(text="Играть", callback_data="btn_play",style="primary",icon_custom_emoji_id="5843973184314937720"),
-        InlineKeyboardButton(text="Вывод", callback_data="btn3_w",style="danger", icon_custom_emoji_id="5843973184314937720")
+        InlineKeyboardButton(text="Вывод", callback_data="btn_w",style="danger", icon_custom_emoji_id="5843973184314937720")
 
     ]
 ])
@@ -68,8 +68,12 @@ withdraw_menu = InlineKeyboardMarkup(inline_keyboard=[
     ],
     [
         InlineKeyboardButton(text="Вывод на мамину карту", callback_data="btn_visa_w"),
+    ],
+    [
+        InlineKeyboardButton(text="Назад в меню", callback_data="btn_menu_from",style="danger",icon_custom_emoji_id="5843680709926981861")
     ]
 ])
+
 
 withdraw_menu_img = InlineKeyboardMarkup(inline_keyboard=[
     [
@@ -78,6 +82,8 @@ withdraw_menu_img = InlineKeyboardMarkup(inline_keyboard=[
     ],
     [
         InlineKeyboardButton(text="Вывод на мамину карту", callback_data="btn_visa_w"),
+    ],
+    [
+        InlineKeyboardButton(text="Назад в меню", callback_data="btn_menu_from_img",style="danger",icon_custom_emoji_id="5843680709926981861")
     ]
-
 ])

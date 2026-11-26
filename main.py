@@ -42,13 +42,13 @@ async def handle_btn1(callback: CallbackQuery):
 @dp.callback_query(F.data == "btn_menu")
 async def handle_btn1(callback: CallbackQuery):
     await callback.answer("Назад в меню")
-    await callback.message.edit_text("Меню Пополнения",reply_markup=main_menu)
+    await callback.message.edit_text("Главное меню Anus 777",reply_markup=main_menu)
     
 @dp.callback_query(F.data == "btn_menu_from_img")
 async def handle_btn1(callback: CallbackQuery):
     await callback.answer("Назад в меню")
     await callback.message.delete()
-    await callback.message.answer("Меню Пополнения",reply_markup=main_menu)
+    await callback.message.answer("Главное меню Anus 777",reply_markup=main_menu)
     
 
 #Оплата SBP
@@ -74,6 +74,12 @@ async def handle_btn1(callback: CallbackQuery):
 
 
 #Вывод
+
+@dp.callback_query(F.data == "btn_w")
+async def handle_btn1(callback: CallbackQuery):
+    await callback.answer("Меню Вывода ")
+    await callback.message.edit_text("Меню Вывода",reply_markup=withdraw_menu)
+
 @dp.callback_query(F.data == "btn_steam_w")
 async def handle_btn1(callback: CallbackQuery):
     await callback.answer("Вывод в Steam")
